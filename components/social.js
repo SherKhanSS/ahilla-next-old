@@ -1,4 +1,3 @@
-import * as React from "react";
 import DzIcon from "./social-media-icons/dz-icons";
 import FbIcon from "./social-media-icons/fb-icons";
 import InIcons from "./social-media-icons/in-icons";

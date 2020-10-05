@@ -57,121 +57,116 @@ const Header = () => {
               </Link>
               <span
                 onClick={() => {
-                  setSubMenuClosed(!subMenuClosed);
+                  isDesktop ? null : setSubMenuClosed(!subMenuClosed);
                 }}
                 className={`site-list__img` + (subMenuClosed ? `` : ` site-list__img--activ`)}>
                 <svg width="11" height="10" viewBox="0 0 11 10">
-                  <path fill={subMenuClosed ? `rgba(0, 0, 0 , 0.5)` : `rgba(255, 255, 255 , 1)`} d="M5.5 10L0 0h11"></path>
+                  <path fill="rgba(0, 0, 0 ,0.5)" d="M5.5 10L0 0h11"></path>
                 </svg>
               </span>
               <ul className={`sub-menu` + (subMenuClosed ? `` : ` sub-menu--open`)}>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/column-editor`);
-                  }}>Колонка редактора</a>
+                  <Link href="/">
+                    <a>Колонка редактора</a>
+                  </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/blogs`);
-                  }}>Блоги</a>
+                  <Link href="/">
+                    <a>Блоги</a>
+                  </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/comments`);
-                  }}>Комментарии</a>
+                  <Link href="/">
+                    <a>Комментарии</a>
+                  </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/we-are-writing`);
-                  }}>Нам пишут</a>
+                  <Link href="/">
+                    <a>Нам пишут</a>
+                  </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/questions-and-answers`);
-                  }}>Вопросы и ответы</a>
+                  <Link href="/">
+                    <a>Вопросы и ответы</a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li
-              onMouseEnter={
-                isDesktop
-                  ? () => {
-                    subMenuDoubleClosed ? setSubMenuDoubleClosed(!subMenuDoubleClosed) : null;
-                  }
-                  : null
-              }
-              onMouseLeave={
-                isDesktop
-                  ? () => {
-                    subMenuDoubleClosed ? null : setSubMenuDoubleClosed(!subMenuDoubleClosed);
-                  }
-                  : null
-              }
+              onMouseEnter={() => {
+                isDesktop && subMenuDoubleClosed ? setSubMenuDoubleClosed(false) : null
+              }}
+              onMouseLeave={() => {
+                isDesktop ? setSubMenuDoubleClosed(true) : null
+              }}
               className="site-list__item site-list__sub-menu">
-              <a onClick={() => {
-                history.push(`/stories`);
-              }}>Истории</a>
+              <Link href="/">
+                <a>Истории</a>
+              </Link>
               <span
                 onClick={() => {
-                  setSubMenuDoubleClosed(!subMenuDoubleClosed);
+                  isDesktop ? null : setSubMenuDoubleClosed(!subMenuDoubleClosed);
                 }}
                 className={`site-list__img` + (subMenuDoubleClosed ? `` : ` site-list__img--activ`)}>
+                <svg width="11" height="10" viewBox="0 0 11 10">
+                  <path fill="rgba(0, 0, 0 ,0.5)" d="M5.5 10L0 0h11"></path>
+                </svg>
               </span>
               <ul className={`sub-menu` + (subMenuDoubleClosed ? `` : ` sub-menu--open`)}>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/culture`);
-                  }}>Культура</a>
+                  <Link href="/">
+                    <a>Культура</a>
+                  </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/religion`);
-                  }}>Религия</a>
+                  <Link href="/">
+                    <a>Религия</a>
+                  </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/literature`);
-                  }}>Проза</a>
+                  <Link href="/">
+                    <a>Проза</a>
+                  </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/society`);
-                  }}>Общество</a>
+                  <Link href="/">
+                    <a>Общество</a>
+                  </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <a onClick={() => {
-                    history.push(`/monitoring`);
-                  }}>Мониторинг СМИ</a>
+                  <Link href="/">
+                    <a>Мониторинг СМИ</a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li className="site-list__item">
-              <a onClick={() => {
-                history.push(`/projects`);
-              }}>Проекты</a>
+              <Link href="/">
+                <a>Проекты</a>
+              </Link>
             </li>
             <li className="site-list__item">
-              <a onClick={() => {
-                history.push(`/authors`);
-              }}>Авторы</a>
+              <Link href="/">
+                <a>Авторы</a>
+              </Link>
             </li>
             <li className="site-list__item">
-              <a onClick={() => {
-                history.push(`/our-books`);
-              }}>Наши книги</a>
+              <Link href="/">
+                <a>Наши книги</a>
+              </Link>
             </li>
             <li className="site-list__item">
-              <a onClick={() => {
-                history.push(`/contacts`);
-              }}>Контакты</a>
+              <Link href="/">
+                <a>Контакты</a>
+              </Link>
             </li>
             <li className="site-list__item">
-              <a onClick={() => {
-                history.push(`/search`);
-              }}>
-                <span className="site-list__search">Поиск</span>
-                <svg className="site-list__search-img" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"/></svg>
-              </a>
+              <Link href="/">
+                <a>
+                  <span className="site-list__search">Поиск</span>
+                  <svg className="site-list__search-img" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"/></svg>
+                </a>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -1,5 +1,3 @@
-import * as React from "react";
-
 const Sort = () => {
   return (
     <section className="main__sort sort">

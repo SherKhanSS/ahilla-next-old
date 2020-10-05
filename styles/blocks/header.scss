@@ -99,6 +99,10 @@
   transition: 0.4s;
 }
 
+.site-list__img svg {
+  transition: 0.4s;
+}
+
 .site-list__img--activ svg {
   transform: rotate(-180deg);
   transition: 0.4s;
@@ -358,6 +362,13 @@
       bottom: 0;
       right: 0;
       z-index: -1;
+    }
+  }
+
+  .site-list__img--activ svg {
+    path {
+      fill: #ffffff;
+      transition: 0.4s;
     }
   }
 

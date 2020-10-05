@@ -1,22 +1,17 @@
 import Link from 'next/link';
-import Side from "./side";
-import ArticleForMain from "./article-for-main";
-import articles from '../pages/api/mocks'
+import ArticleForMain from './article-for-main';
+import articles from '../pages/api/mocks';
 
-const Main = () => {
+const Home = () => {
   const articlesThoughts = articles.filter((article) => article.category === `thoughts`).slice(0, 5);
   const articlesNews = articles.filter((article) => article.category === `news`).slice(0, 5);
 
   return (
-    <main className="main">
-      <div className="main__wrapper">
-        <h1 className="visually-hidden">Независимый аналитический проект «Ахилла»</h1>
-        <section className="main__content content">
-          
+        <>       
           <section className="content__articles articles">
             <h2 className="articles__title">
-              <Link href="/" className="navigation-link">
-                Статьи
+              <Link href="/">
+                <a className="navigation-link">Статьи</a>
               </Link>
             </h2>
             <ul className="articles__list">
@@ -29,15 +24,15 @@ const Main = () => {
                 );
               })}
             </ul>
-            <Link href="/" className="navigation-link articles__next">
-              Все статьи »
+            <Link href="/">
+              <a className="navigation-link articles__next">Все статьи »</a>
             </Link>
           </section>
 
           <section className="content__news news">
             <h2 className="news__title">
-              <Link href="/" className="navigation-link">
-                Новости
+              <Link href="/" className="">
+                <a className="navigation-link">Новости</a>               
               </Link>
             </h2>
             <ul className="news__list">
@@ -50,18 +45,12 @@ const Main = () => {
                 );
               })}
             </ul>
-            <Link href="/" className="navigation-link news__next">
-              Все новости »
+            <Link href="/">
+              <a className="navigation-link news__next">Все новости »</a>
             </Link>
           </section>
-
-          <Side/>
-
-        </section>
-
-      </div>
-    </main>
+        </>
   );
 };
 
-export default Main;
+export default Home;
