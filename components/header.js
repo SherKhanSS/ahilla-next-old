@@ -146,7 +146,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="site-list__item">
-              <Link href="/">
+              <Link href="/authors">
                 <a>Авторы</a>
               </Link>
             </li>
